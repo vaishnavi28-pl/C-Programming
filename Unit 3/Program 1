@@ -1,1 +1,55 @@
+//1.Display Array Elements and Their Memory Addresses
+#include <stdio.h>
 
+int main()
+{
+    int intArray[3];
+    float floatArray[3];
+    char charArray[3];
+    int i;
+
+    // Input for Integer Array
+    printf("Enter 3 integer elements:\n");
+    for (i = 0; i < 3; i++)
+    {
+        scanf("%d", &intArray[i]);
+    }
+
+    // Input for Float Array
+    printf("\nEnter 3 float elements:\n");
+    for (i = 0; i < 3; i++)
+    {
+        scanf("%f", &floatArray[i]);
+    }
+
+    // Input for Character Array
+    printf("\nEnter 3 character elements:\n");
+    for (i = 0; i < 3; i++)
+    {
+        // Note: A space before %c helps skip any leftover newline characters in the buffer
+        scanf(" %c", &charArray[i]); 
+    }
+
+    // Display Integer Array with Memory Addresses
+    printf("\nInteger Array:\n");
+    for (i = 0; i < 3; i++)
+    {
+        printf("Value = %d, Address = %p\n", intArray[i], (void *)&intArray[i]);
+    }
+
+    // Display Float Array with Memory Addresses
+    printf("\nFloat Array:\n");
+    for (i = 0; i < 3; i++)
+    {
+        printf("Value = %.2f, Address = %p\n", floatArray[i], (void *)&floatArray[i]);
+    }
+
+    // Display Character Array with Memory Addresses
+    printf("\nCharacter Array:\n");
+    for (i = 0; i < 3; i++)
+    {
+        printf("Value = %c, Address = %p\n", charArray[i], (void *)&charArray[i]);
+    }
+
+    return 0;
+}
